@@ -74,7 +74,7 @@ namespace FormPessoas
                 if (chbMasculino.Checked)
                 {
                     lstPessoas.Clear();
-                    foreach (Pessoa pessoa in bancoDeDados)
+                    foreach (Pessoa pessoa in bancoDeDados.OrderBy(p => p?.idade))
                     {
                         if (pessoa != null && pessoa.sexo == "M")
                         {
@@ -86,7 +86,7 @@ namespace FormPessoas
                 if (chbFeminino.Checked)
                 {
                     lstPessoas.Clear();
-                    foreach (Pessoa pessoa in bancoDeDados)
+                    foreach (Pessoa pessoa in bancoDeDados.OrderBy(p => p?.idade))
                     {
                         if (pessoa != null && pessoa.sexo == "F")
                         {
@@ -99,7 +99,7 @@ namespace FormPessoas
                 {
 
                     lstPessoas.Clear();
-                    foreach (Pessoa pessoa in bancoDeDados)
+                    foreach (Pessoa pessoa in bancoDeDados.OrderBy(p => p?.idade))
                     {
                         if (pessoa != null)
                         {
@@ -138,7 +138,7 @@ namespace FormPessoas
             lstPessoas.Clear();
 
             // Percorrer o array bancoDeDados e se for M ele filtra no ListView os M
-            foreach (Pessoa pessoa in bancoDeDados)
+            foreach (Pessoa pessoa in bancoDeDados.OrderBy(p => p?.idade))
             {
                 if (pessoa != null && pessoa.sexo == "M")
                 {
@@ -159,8 +159,8 @@ namespace FormPessoas
             // Limpar o ListView
             lstPessoas.Clear();
 
-            // Percorrer o array bancoDeDados e se for M ele filtra no ListView os M
-            foreach (Pessoa pessoa in bancoDeDados)
+            // Percorrer o array bancoDeDados e se for F ele filtra no ListView os M
+            foreach (Pessoa pessoa in bancoDeDados.OrderBy(p => p?.idade))
             {
                 if (pessoa != null && pessoa.sexo == "F")
                 {
@@ -182,7 +182,7 @@ namespace FormPessoas
             lstPessoas.Clear();
 
             // Percorrer o array bancoDeDados e se for M ele filtra no ListView os M
-            foreach (Pessoa pessoa in bancoDeDados)
+            foreach (Pessoa pessoa in bancoDeDados.OrderBy(p => p?.idade))
             {
                 if (pessoa != null)
                 {
